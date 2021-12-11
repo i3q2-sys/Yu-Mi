@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
-
+    public GameObject gameManager;
     public GameObject C;
     private Animator An;
     public bool CanInput = false;
@@ -12,6 +12,7 @@ public class SceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager.SetActive(false);
         An = C.GetComponent<Animator>();
     }
 
@@ -23,12 +24,14 @@ public class SceneManager : MonoBehaviour
 
     public void GoToMainScene() 
     {
+        gameManager.SetActive(false);
         An.SetTrigger("Main");
         Debug.Log("Main");
     }
 
     public void GoToMeditation() 
     {
+        gameManager.SetActive(false);
         An.SetTrigger("Meditation");
         Debug.Log("Meditation");
 
@@ -36,6 +39,7 @@ public class SceneManager : MonoBehaviour
 
     public void GoToHappyWall() 
     {
+        gameManager.SetActive(false);
         An.SetTrigger("HappyWall");
         Debug.Log("HappyWall");
 
@@ -43,6 +47,7 @@ public class SceneManager : MonoBehaviour
 
     public void GoToGame() 
     {
+        gameManager.SetActive(true);
         An.SetTrigger("Game");
         Debug.Log("Game");
 
@@ -50,6 +55,7 @@ public class SceneManager : MonoBehaviour
 
     public void Rant() 
     {
+        gameManager.SetActive(false);
         An.SetTrigger("Rant");
         Debug.Log("Rant");
 

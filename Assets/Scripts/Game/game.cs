@@ -5,7 +5,7 @@ using UnityEngine;
 public class game : MonoBehaviour
 {
     private const int height = 11;
-    private const float blocksize = 0.5f;
+    private const float blocksize = 1f;
     public GameObject log;
     private troncScript[] tree;
     // Start is called before the first frame update
@@ -27,21 +27,23 @@ public class game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool b = Input.GetKeyDown(KeyCode.A);
-        bool c = Input.GetKeyDown(KeyCode.D);
-        bool a = Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
-        if (b || c || a)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-
-            if (c) tree[0].kicked = 1;
-            if (b) tree[0].kicked = -1;
-            for (int i = 1; i<height;i++)
+            Vector3 coord = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+            bool b = Input.GetKeyDown(KeyCode.A) || coord.x < -10.5;
+            bool c = Input.GetKeyDown(KeyCode.D) || coord.x > -10.5;
+            if (b || c)
             {
-                tree[i].yTarget -= blocksize;
-                tree[i - 1] = tree[i];
-               
+                if (c) tree[0].kicked = 1;
+                if (b) tree[0].kicked = -1;
+                for (int i = 1; i < height; i++)
+                {
+                    tree[i].yTarget -= blocksize;
+                    tree[i - 1] = tree[i];
+
+                }
+                tree[height - 1] = untronc(height - 1);
             }
-            tree[height-1] = untronc(height - 1);
         }
         
     }
