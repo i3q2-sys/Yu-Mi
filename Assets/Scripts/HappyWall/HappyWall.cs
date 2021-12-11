@@ -68,6 +68,10 @@ public class HappyWall : MonoBehaviour
 	}
 
 
+
+
+
+
 	public void PickImage( int maxSize )
 {
 	NativeGallery.Permission permission = NativeGallery.GetImageFromGallery( ( path ) =>
