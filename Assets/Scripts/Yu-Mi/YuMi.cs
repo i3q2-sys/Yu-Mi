@@ -55,6 +55,7 @@ public class YuMi : MonoBehaviour
 
     public void inicialitzar(int[] valorRes, int n)
     {
+        
         if (emocions.nerviosisme == emocions.max()) sceneManager.GoToMeditation();
 
         else if (emocions.tristesa == emocions.max()) sceneManager.GoToHappyWall();
@@ -66,6 +67,8 @@ public class YuMi : MonoBehaviour
 
             else sceneManager.GoToGame();
         }
+
+        orch.PlayWelcomeCinematic();
 
     }
 

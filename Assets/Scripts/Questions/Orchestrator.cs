@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Playables;
 
 enum State {Questionary, Cinematic , Idle}
 public class Orchestrator : MonoBehaviour
@@ -15,13 +16,16 @@ public class Orchestrator : MonoBehaviour
     public TextMeshProUGUI[] Answers = new TextMeshProUGUI[4];
 
 
+    public PlayableDirector[] Timeline;
+    public float[] TimelineDuration;
+
     public Questionary PlayerPersonalityTest;
     private State CurrenState = State.Cinematic;
     private Questionary CurrenQuestionary;
 
     Animator An;
 
-    private int[] PersonalityResponses = new int[10];
+    private int[] PersonalityResponses = new int[7];
     private int[] EmotionalResponses = new int[10];
 
 
@@ -36,6 +40,18 @@ public class Orchestrator : MonoBehaviour
     {
         
     }
+
+
+    public void PlayWelcomeCinematic() 
+    {
+        SM.CanInput = false;
+        CurrenState = State.Cinematic;
+        Timeline[0].Play();
+        StartCoroutine(Countdown(TimelineDuration[0]));
+
+
+    }
+
 
     public void PlayPersonalityTest() 
     {
@@ -91,5 +107,14 @@ public class Orchestrator : MonoBehaviour
         CurrenQuestionary.current_question++;
 
     }
-   
+
+
+    private IEnumerator Countdown(float time)
+    {
+        
+        yield return new WaitForSeconds(time);
+        CurrenState = State.Idle;
+        
+    }
+
 }
