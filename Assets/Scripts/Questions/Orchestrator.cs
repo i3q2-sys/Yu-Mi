@@ -81,6 +81,7 @@ public class Orchestrator : MonoBehaviour
             UI.SetActive(false);
             SM.CanInput = true;
             An.SetTrigger("FinishedQuestionary");
+            return;
         }
 
         Question.text = CurrenQuestionary.Questions[CurrenQuestionary.current_question].QuestionString;
