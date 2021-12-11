@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Questionary : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[System.Serializable]
+public class Questionary 
+{
+    [SerializeField]
+    public Question[] Questions = new Question[10];
+    public int current_question = 0;
+    public bool Answered = false;
+    public bool Displayed = false;
 }

@@ -54,7 +54,7 @@ public class YuMi : MonoBehaviour
         orch.PlayPersonalityTest();
     }
 
-    void inicialitzar(int[] valorRes)
+    void inicialitzar(int[] valorRes, int n)
     {
         if (emocions.nerviosisme == emocions.max()) sceneManager.GoToMeditation();
 
