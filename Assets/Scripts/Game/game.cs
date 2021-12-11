@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class game : MonoBehaviour
 {
+    private int score = 0;
     private const int height = 11;
-    private const float blocksize = 1f;
+    private const float blocksize = 1.6f;
     public GameObject log;
     private troncScript[] tree;
     // Start is called before the first frame update
@@ -24,18 +25,23 @@ public class game : MonoBehaviour
 
     }
 
+    private void hit() {
+        score -= 5;
+        Debug.Log("hit");
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
+            score += 1;
             Vector3 coord = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-            bool b = Input.GetKeyDown(KeyCode.A) || coord.x < -10.5;
+            bool b = Input.GetKeyDown(KeyCode.A) || coord.x <= -10.5;
             bool c = Input.GetKeyDown(KeyCode.D) || coord.x > -10.5;
             if (b || c)
             {
-                if (c) tree[0].kicked = 1;
-                if (b) tree[0].kicked = -1;
+                if (tree[0].kick(c)) hit();
                 for (int i = 1; i < height; i++)
                 {
                     tree[i].yTarget -= blocksize;
@@ -43,6 +49,7 @@ public class game : MonoBehaviour
 
                 }
                 tree[height - 1] = untronc(height - 1);
+                tree[height - 1].generateChild();
             }
         }
         

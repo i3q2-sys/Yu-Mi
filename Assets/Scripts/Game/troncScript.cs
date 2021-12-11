@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class troncScript : MonoBehaviour
 {
-
+    public int kid = 0;
     public float yTarget;
     public int kicked=0;
     // Start is called before the first frame update
@@ -13,6 +13,30 @@ public class troncScript : MonoBehaviour
         
     }
 
+    public bool kick(bool right) {
+        if (right) kicked = 1;
+        else kicked = -1;
+        if ((right && kid == 1) || (!right && kid == -1)) return true;
+        return false;
+    }
+
+    public void generateChild() {
+        if (Random.Range(0.0f, 5.0f) > 4.0f)
+        {
+            GameObject c = Instantiate(gameObject);
+            c.transform.parent = gameObject.transform;
+            if (Random.Range(0.0f, 1.0f) > 0.5f)
+            {
+                kid = 1;
+                c.transform.position += new Vector3(1.6f, 0, 0);
+            }
+            else
+            {
+                kid = -1;
+                c.transform.position -= new Vector3(1.6f, 0, 0);
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
