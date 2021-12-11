@@ -8,6 +8,8 @@ public class Orchestrator : MonoBehaviour
 {
     [SerializeField]
 
+    public GameObject YuMi;
+    public SceneManager SM;
     public GameObject UI;
     public TextMeshProUGUI Question;
     public TextMeshProUGUI[] Answers = new TextMeshProUGUI[4];
@@ -19,8 +21,8 @@ public class Orchestrator : MonoBehaviour
 
     Animator An;
 
-    private int[] PersonalityResponses = new int[7];
-    private int[] EmotionalResponses = new int[7];
+    private int[] PersonalityResponses = new int[10];
+    private int[] EmotionalResponses = new int[10];
 
 
     public void Start()
@@ -37,9 +39,11 @@ public class Orchestrator : MonoBehaviour
 
     public void PlayPersonalityTest() 
     {
+        SM.CanInput = false;
         UI.SetActive(true);
         CurrenQuestionary = PlayerPersonalityTest;
         CurrenState = State.Questionary;
+        An.SetTrigger("Questionary");
         An.SetTrigger("Answered");
     }
 
@@ -50,12 +54,17 @@ public class Orchestrator : MonoBehaviour
         {
             if (CurrenQuestionary == PlayerPersonalityTest)
             {
-
+                YuMi.GetComponent<YuMi>().inicialitzar(PersonalityResponses, 0);
             }
             else
             {
-
+                YuMi.GetComponent<YuMi>().inicialitzar(EmotionalResponses, 1);
             }
+            CurrenQuestionary = null;
+            CurrenState = State.Idle;
+            UI.SetActive(false);
+            SM.CanInput = true;
+            An.SetTrigger("FinishedQuestionary");
         }
 
         Question.text = CurrenQuestionary.Questions[CurrenQuestionary.current_question].QuestionString;
@@ -63,9 +72,8 @@ public class Orchestrator : MonoBehaviour
         {
             Answers[i].text = CurrenQuestionary.Questions[CurrenQuestionary.current_question].ArrayOfAnswers[i];
         }
-        
 
-        
+
     }
 
 
