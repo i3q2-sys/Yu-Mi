@@ -96,16 +96,16 @@ public class YuMi : MonoBehaviour
                 }
             }
 
-            if (emocions.nerviosisme == emocions.max()) sceneManager.GoToMeditation();
+           // if (emocions.nerviosisme == emocions.max()) sceneManager.GoToMeditation();
 
-            else if (emocions.tristesa == emocions.max()) sceneManager.GoToHappyWall();
+           // else if (emocions.tristesa == emocions.max()) sceneManager.GoToHappyWall();
 
-            else if (emocions.enfado == emocions.max())
+            /*else */if (emocions.enfado == emocions.max())
             {
                 int tot = perso.e + perso.d - perso.v;
                 if (tot >= 5) sceneManager.Rant();
 
-                else sceneManager.GoToGame();
+                //else sceneManager.GoToGame();
             }
         }
         else if (n == 1)

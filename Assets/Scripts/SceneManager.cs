@@ -79,8 +79,8 @@ public class SceneManager : MonoBehaviour
 
     public void Rant() 
     {
-        gameManager.SetActive(false);
-        MainYuMi.SetActive(false);
+       // gameManager.SetActive(false);
+       // MainYuMi.SetActive(false);
         An.SetTrigger("Rant");
 
     }
