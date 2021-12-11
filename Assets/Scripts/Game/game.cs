@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class game : MonoBehaviour
 {
+    public GameObject yumi;
+    public Animator anim;
     private int score = 0;
     private const int height = 11;
     private const float blocksize = 1.6f;
@@ -41,6 +43,7 @@ public class game : MonoBehaviour
             bool c = Input.GetKeyDown(KeyCode.D) || coord.x > -10.5;
             if (b || c)
             {
+                anim.SetTrigger("Atack");
                 if (tree[0].kick(c)) hit();
                 for (int i = 1; i < height; i++)
                 {

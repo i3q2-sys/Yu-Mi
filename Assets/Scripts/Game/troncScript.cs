@@ -47,7 +47,7 @@ public class troncScript : MonoBehaviour
             float yOffset = transform.position.y - yTarget;
             if (yOffset > 0)
             {
-                float sped = Time.deltaTime * 10 * yOffset * yOffset * yOffset;
+                float sped = 0.5f*Time.deltaTime + Time.deltaTime * 10 * yOffset * yOffset * yOffset;
                 if (yOffset > sped) transform.position -= new Vector3(0, sped, 0);
                 else transform.position -= new Vector3(0, yOffset, 0);
             }
