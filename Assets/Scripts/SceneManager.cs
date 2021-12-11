@@ -7,6 +7,8 @@ public class SceneManager : MonoBehaviour
 
     public GameObject C;
     private Animator An;
+    public bool CanInput = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class SceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ManageInput();
+        if(CanInput)ManageInput();
     }
 
     public void GoToMainScene() 
@@ -81,6 +83,10 @@ public class SceneManager : MonoBehaviour
                 else if (hit.collider.CompareTag("Main"))
                 {
                     GoToMainScene();
+                }
+                else if (hit.collider.CompareTag("AddPhoto"))
+                {
+                    FindObjectOfType<HappyWall>().OpenUI();
                 }
             }
         }

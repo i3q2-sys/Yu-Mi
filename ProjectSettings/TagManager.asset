@@ -8,6 +8,8 @@ TagManager:
   - Meditation
   - Game
   - Main
+  - AddPhoto
+  - Photo
   layers:
   - Default
   - TransparentFX
