@@ -32,7 +32,7 @@ public class troncScript : MonoBehaviour
         {
             transform.eulerAngles = transform.eulerAngles + new Vector3(0, 0, -Time.deltaTime * kicked * 200);
             transform.position += new Vector3(Time.deltaTime*kicked*10, 0, 0);
-            if (transform.position.x >= 0 || transform.position.x < -10)
+            if (transform.position.x >= -5 || transform.position.x < -15)
             {
                 Destroy(gameObject);
             } 

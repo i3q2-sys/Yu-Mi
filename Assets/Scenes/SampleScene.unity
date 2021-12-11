@@ -698,6 +698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0c97ace9a8d4c47b27d7d8ce767110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 1984624289}
   C: {fileID: 519420028}
   CanInput: 0
 --- !u!4 &252950198
@@ -1247,7 +1248,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &471421707
 GameObject:
@@ -1874,7 +1875,7 @@ Transform:
   m_LocalScale: {x: 0.3802, y: 0.3802, z: 0.3802}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &770065576
 GameObject:
@@ -2901,7 +2902,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1282071146
 GameObject:
@@ -4740,7 +4741,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2001662314
 GameObject:
@@ -4810,7 +4811,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orch: {fileID: 845726643}
   sceneManager: {fileID: 252950197}
-  algo: {fileID: 0}
 --- !u!95 &2001662318
 Animator:
   serializedVersion: 3
@@ -5064,5 +5064,5 @@ Transform:
   m_Children:
   - {fileID: 1649148905}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
