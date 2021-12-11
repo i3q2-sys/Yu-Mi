@@ -4,14 +4,14 @@ using UnityEngine;
 
 struct personalitat {
 
-    public int extrovertit, dependent, irascible, tranquil, vergonnyos;
+    public int extrovertit, dependent, irascible, tranquil, vergonyos;
     public personalitat(int e, int d, int i, int t, int v)
     {
         extrovertit = e;
         dependent = d;
         irascible = i;
         tranquil = t;
-        vergonnyos = v;
+        vergonyos = v;
     }
 
 }
@@ -44,7 +44,6 @@ public class YuMi : MonoBehaviour
 
     public Orchestrator orch;
     public SceneManager sceneManager;
-    public GameObject algo;
     private personalitat perso = new personalitat(0,0,0,0,0);
     private sAnim emocions= new sAnim(0,0,0);
     
@@ -62,7 +61,7 @@ public class YuMi : MonoBehaviour
 
         else if (emocions.enfado == emocions.max())
         {
-            int tot = perso.extrovertit + perso.dependent - perso.vergonnyos;
+            int tot = perso.extrovertit + perso.dependent - perso.vergonyos;
             if (tot >= 5) sceneManager.Rant();
 
             else sceneManager.GoToGame();
