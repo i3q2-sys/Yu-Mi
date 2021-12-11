@@ -42,6 +42,7 @@ struct sAnim
 public class YuMi : MonoBehaviour
 {
 
+    public Orchestrator orch;
     public SceneManager sceneManager;
     public GameObject algo;
     private personalitat perso = new personalitat(0,0,0,0,0);
@@ -50,18 +51,24 @@ public class YuMi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //playPersonalityTest
+
+        orch.PlayPersonalityTest();
+    }
+
+    void inicialitzar(int[] valorRes)
+    {
         if (emocions.nerviosisme == emocions.max()) sceneManager.GoToMeditation();
 
         else if (emocions.tristesa == emocions.max()) sceneManager.GoToHappyWall();
 
         else if (emocions.enfado == emocions.max())
         {
-            int tot = perso.extrovertit + perso.dependent-perso.vergonnyos;
-            if (tot>=5) sceneManager.Rant();
+            int tot = perso.extrovertit + perso.dependent - perso.vergonnyos;
+            if (tot >= 5) sceneManager.Rant();
 
             else sceneManager.GoToGame();
         }
+
     }
 
     // Update is called once per frame
