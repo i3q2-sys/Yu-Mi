@@ -748,6 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0c97ace9a8d4c47b27d7d8ce767110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 1984624289}
   C: {fileID: 519420028}
   CanInput: 0
 --- !u!4 &252950198
