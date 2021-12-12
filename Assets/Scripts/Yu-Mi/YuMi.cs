@@ -17,24 +17,24 @@ struct personalitat {
 }
 struct sAnim
 {
-    public int nerviosisme, tristesa, enfado;
-    public sAnim(int n, int t, int e)
+    public int n, t, e;
+    public sAnim(int nerviosisme, int tristesa, int enfado)
     {
-        nerviosisme = n;
-        tristesa = t;
-        enfado = e;
+        n = nerviosisme;
+        t = tristesa;
+        e = enfado;
     }
     public int max()
     {
-        if (nerviosisme >= tristesa)
+        if (n >= t)
         {
-            if (nerviosisme >= enfado) return nerviosisme;
-            return enfado;
+            if (n >= e) return n;
+            return e;
         }
         else
         {
-            if (tristesa >= enfado) return tristesa;
-            else return enfado;
+            if (t >= e) return t;
+            else return e;
         }
     }
 }
@@ -100,13 +100,13 @@ public class YuMi : MonoBehaviour
 
            // else if (emocions.tristesa == emocions.max()) sceneManager.GoToHappyWall();
 
-            /*else */if (emocions.enfado == emocions.max())
+            /*else if (emocions.e == emocions.max())
             {
                 int tot = perso.e + perso.d - perso.v;
                 if (tot >= 5) sceneManager.Rant();
 
                 //else sceneManager.GoToGame();
-            }
+            }*/
         }
         else if (n == 1)
         {
@@ -117,25 +117,25 @@ public class YuMi : MonoBehaviour
                 switch (val)
                 {
                     case 0: break;
-                    case 1: break;
-                    case 2: break;
-                    case 3: break;
-                    case 4: break;
-                    case 5: break;
+                    case 1: emocions.n += 1; break;
+                    case 2: emocions.t += 1; break;
+                    case 3: emocions.e += 1; break;
+                    case 4: emocions.n += 2; break;
+                    case 5: emocions.t += 1;  break;
                     case 6: break;
                     case 7: break;
-                    case 8: break;
-                    case 9: break;
-                    case 10: break;
+                    case 8: emocions.t += 2; break;
+                    case 9: emocions.n += 1; break;
+                    case 10: emocions.e += 1; break;
                     case 11: break;
-                    case 12: break;
-                    case 13: break;
-                    case 14: break;
+                    case 12: emocions.e += 2; break;
+                    case 13: emocions.t += 1; break;
+                    case 14: emocions.n += 1; break;
                     case 15: break;
                     case 16: break;
-                    case 17: break;
-                    case 18: break;
-                    case 19: break;
+                    case 17: emocions.t += 1; break;
+                    case 18: emocions.n += 1; break;
+                    case 19: emocions.e += 2; break;
                     default: break;
                 }
             }
