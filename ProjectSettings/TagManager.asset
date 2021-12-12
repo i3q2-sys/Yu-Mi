@@ -10,6 +10,8 @@ TagManager:
   - Main
   - AddPhoto
   - Photo
+  - Meditate
+  - Sound
   layers:
   - Default
   - TransparentFX

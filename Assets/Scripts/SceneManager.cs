@@ -114,9 +114,19 @@ public class SceneManager : MonoBehaviour
                 }
                 else if (hit.collider.CompareTag("AddPhoto"))
                 {
-                    Debug.Log("De puto veritat ek");
                     FindObjectOfType<HappyWall>().OpenUI();
                 }
+                else if (hit.collider.CompareTag("Meditate"))
+                {
+                    FindObjectOfType<Orchestrator>().PlayMeditation();
+                }
+                else if (hit.collider.CompareTag("Sound"))
+                {
+                    Debug.Log("Music");
+                    FindObjectOfType<MusicManager>().Music();
+                }
+
+                
             }
         }
     }

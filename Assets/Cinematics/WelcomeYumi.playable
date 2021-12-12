@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: "Ara t'eplicar\xE9 tot el que pots fer en aquesta habitaci\xF3!"
   dialoguePosition: {x: 0, y: 752.37}
-  facingLeft: 1
+  facingLeft: 0
 --- !u!114 &-7636988711487662144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31,7 +31,7 @@ MonoBehaviour:
     amb alg\xFA simplement fes-me click a sobre i estar\xE9 a la teva disposici\xF3!
     Disfruta!"
   dialoguePosition: {x: 0, y: 752.37}
-  facingLeft: 1
+  facingLeft: 0
 --- !u!114 &-5186644020676079010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,7 +70,7 @@ MonoBehaviour:
   dialogueText: "A terra, el portatil et portar\xE0 a un petit minijoc que t'ajudar\xE0
     a treure't l'estr\xE9s de sobre"
   dialoguePosition: {x: 0, y: 752.37}
-  facingLeft: 1
+  facingLeft: 0
 --- !u!114 &-1494533183295072017
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -661,7 +661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: "Dacord! Amb aix\xF2 ja et conec una mica m\xE9s!"
   dialoguePosition: {x: 0, y: 752.37}
-  facingLeft: 1
+  facingLeft: 0
 --- !u!114 &4311765812831275694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -677,7 +677,7 @@ MonoBehaviour:
   dialogueText: "Finalment a la dreta, la finestra et portar\xE0 a un lloc tranquil
     on hi podr\xE0s meditar i relaxar-te."
   dialoguePosition: {x: 0, y: 752.37}
-  facingLeft: 1
+  facingLeft: 0
 --- !u!114 &5022835318716206158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -709,4 +709,4 @@ MonoBehaviour:
     a un espai personalitzable on pots penjar fotos i anotaci\xF3ns que et facin
     feli\xE7!"
   dialoguePosition: {x: 0, y: 752.37}
-  facingLeft: 1
+  facingLeft: 0
