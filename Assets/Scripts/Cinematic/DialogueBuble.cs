@@ -27,7 +27,6 @@ public class DialogueBuble : MonoBehaviour
             gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             text.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             FacingLeft = true;
-            Debug.Log("Here");
         }
         if (!left && FacingLeft)
         {

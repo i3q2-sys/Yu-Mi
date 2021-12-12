@@ -325,7 +325,7 @@ MonoBehaviour:
   dialogueText: "Aquest d'aqu\xED ser\xE0 el teu espai personal, un lloc que podr\xE0s
     personalitzar i que t'ajudar\xE0 a sentir-te c\xF2mode"
   dialoguePosition: {x: 0, y: 752.37}
-  facingLeft: 0
+  facingLeft: 1
 --- !u!114 &3866341093057078688
 MonoBehaviour:
   m_ObjectHideFlags: 1

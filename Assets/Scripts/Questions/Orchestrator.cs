@@ -81,6 +81,7 @@ public class Orchestrator : MonoBehaviour
             UI.SetActive(false);
             SM.CanInput = true;
             An.SetTrigger("FinishedQuestionary");
+            return;
         }
 
         Question.text = CurrenQuestionary.Questions[CurrenQuestionary.current_question].QuestionString;
@@ -108,12 +109,24 @@ public class Orchestrator : MonoBehaviour
 
     }
 
+    public void PlayMeditation() 
+    {
+        SM.CanInput = false;
+        CurrenState = State.Cinematic;
+        FindObjectOfType<MusicManager>().Stop();
+        //FindObjectOfType<AudioManager>().Play("Nature"); this audio track needs to be added to the audio manager
+        Timeline[1].Play();
+        StartCoroutine(Countdown(TimelineDuration[1]));
+
+    }
+
 
     private IEnumerator Countdown(float time)
     {
         
         yield return new WaitForSeconds(time);
         CurrenState = State.Idle;
+        SM.CanInput = true;
         
     }
 
