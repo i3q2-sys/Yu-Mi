@@ -789,7 +789,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: e251da13bcb0c0c489347a073215a539, type: 3}
   m_Color: {r: 0.9245283, g: 0.91040283, b: 0.46807873, a: 1}
   m_FlipX: 0
@@ -6016,7 +6016,7 @@ MonoBehaviour:
   mixerGroup: {fileID: 0}
   sounds:
   - name: Megalovania
-    clip: {fileID: 8300000, guid: a8f06c269534de54098b84b6da74de1f, type: 3}
+    clip: {fileID: 8300000, guid: b37e415129af88f4a9079ad9d0fc5f51, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
@@ -6490,7 +6490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1984624290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6503,7 +6503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc7efefe74bb0a14c89d719d475fbccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yumi: {fileID: 0}
+  yumi: {fileID: 944835175}
   anim: {fileID: 944835176}
   log: {fileID: 9062659157389646250, guid: 0d79df6c95c33504aaeb3500512cf7b7, type: 3}
 --- !u!4 &1984624291
