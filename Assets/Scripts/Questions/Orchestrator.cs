@@ -20,13 +20,16 @@ public class Orchestrator : MonoBehaviour
     public float[] TimelineDuration;
 
     public Questionary PlayerPersonalityTest;
+    public Questionary EmotionalTest; 
     private State CurrenState = State.Cinematic;
     private Questionary CurrenQuestionary;
+
+    
 
     Animator An;
 
     private int[] PersonalityResponses = new int[7];
-    private int[] EmotionalResponses = new int[10];
+    private int[] EmotionalResponses = new int[5];
 
 
     public void Start()
@@ -63,6 +66,16 @@ public class Orchestrator : MonoBehaviour
         An.SetTrigger("Answered");
     }
 
+    public void PlayEmotionalTest() 
+    {
+        SM.CanInput = false;
+        UI.SetActive(true);
+        CurrenQuestionary = EmotionalTest;
+        CurrenState = State.Questionary;
+        An.SetTrigger("Questionary");
+        An.SetTrigger("Answered");
+    }
+
     public void SetNextQuestion()
     {
 
@@ -74,7 +87,11 @@ public class Orchestrator : MonoBehaviour
             }
             else
             {
+
                 YuMi.GetComponent<YuMi>().inicialitzar(EmotionalResponses, 1);
+                Timeline[2].Play();
+
+
             }
             CurrenQuestionary = null;
             CurrenState = State.Idle;
@@ -114,7 +131,7 @@ public class Orchestrator : MonoBehaviour
         SM.CanInput = false;
         CurrenState = State.Cinematic;
         FindObjectOfType<MusicManager>().Stop();
-        //FindObjectOfType<AudioManager>().Play("Nature"); this audio track needs to be added to the audio manager
+        FindObjectOfType<AudioManager>().Play("Nature");
         Timeline[1].Play();
         StartCoroutine(Countdown(TimelineDuration[1]));
 

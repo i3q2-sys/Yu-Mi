@@ -125,8 +125,12 @@ public class SceneManager : MonoBehaviour
                     Debug.Log("Music");
                     FindObjectOfType<MusicManager>().Music();
                 }
+                else if (hit.collider.CompareTag("YuMi"))
+                {
+                    FindObjectOfType<Orchestrator>().PlayEmotionalTest();
+                }
 
-                
+
             }
         }
     }

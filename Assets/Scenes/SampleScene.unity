@@ -2849,6 +2849,56 @@ PlayableDirector:
     value: {fileID: 1328501327}
   m_ExposedReferences:
     m_References: []
+--- !u!1 &724885788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 724885789}
+  - component: {fileID: 724885790}
+  m_Layer: 0
+  m_Name: Recomendation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &724885789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724885788}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1428140033}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &724885790
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724885788}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 7b574c0e96ff78a4290beaaddbe0f6e0, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -3881629242431625480, guid: 7b574c0e96ff78a4290beaaddbe0f6e0, type: 2}
+    value: {fileID: 1328501327}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &757697427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,9 +3043,11 @@ GameObject:
   - component: {fileID: 768046583}
   - component: {fileID: 768046582}
   - component: {fileID: 768046581}
+  - component: {fileID: 768046585}
+  - component: {fileID: 768046584}
   m_Layer: 0
   m_Name: YuMiAvatar
-  m_TagString: Untagged
+  m_TagString: YuMi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3084,6 +3136,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &768046584
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768046580}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.8921583, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.1195927
+--- !u!50 &768046585
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768046580}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &770065576
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,9 +3402,11 @@ MonoBehaviour:
   Timeline:
   - {fileID: 143696313}
   - {fileID: 712334801}
+  - {fileID: 724885790}
   TimelineDuration:
   - 53.55
   - 52.3
+  - 6
   PlayerPersonalityTest:
     Questions:
     - QuestionString: T'agrada sortir?
@@ -3360,6 +3451,41 @@ MonoBehaviour:
       - No em desagrada
       - M'activo
       - M'incomoda
+    current_question: 0
+    Answered: 0
+    Displayed: 0
+  EmotionalTest:
+    Questions:
+    - QuestionString: "Aix\xED que vols parlar una estona. Com t'ha anat en dia?"
+      ArrayOfAnswers:
+      - "B\xE9, no he tingut cap problema"
+      - Malament, tinc molta feina
+      - No ha sigut un bon dia
+      - "Horror\xF3s"
+    - QuestionString: Has aconseguit complir els teus objectius diaris?
+      ArrayOfAnswers:
+      - No, he tingut molta feina
+      - "Si, per\xF2 no com jo voldria"
+      - Si
+      - No, no m'he sentit be
+    - QuestionString: Com et sents ara mateix?
+      ArrayOfAnswers:
+      - Em sento pesat o trist
+      - Em sento inquiet
+      - No puc parar de pensar
+      - Em sento be
+    - QuestionString: "Si puguessis fer cualsevol cosa de les seg\xFCents, que faries?"
+      ArrayOfAnswers:
+      - Pegar cops
+      - Escoltar musica trista
+      - Fer feina
+      - Descansar
+    - QuestionString: "Vols parlar de com est\xE0s?"
+      ArrayOfAnswers:
+      - "No, estic b\xE9"
+      - No, no em ve de gust
+      - Crec qu si pero no n'estic segur/a
+      - Si, ho necessito
     current_question: 0
     Answered: 0
     Displayed: 0
@@ -4784,7 +4910,7 @@ RectTransform:
   m_GameObject: {fileID: 1328501325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1706122193}
   m_Father: {fileID: 1645045662}
@@ -4792,7 +4918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 540, y: -1040}
+  m_AnchoredPosition: {x: 540, y: 960}
   m_SizeDelta: {x: 1047, y: 385}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1328501327
@@ -4808,7 +4934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1706122194}
-  FacingLeft: 0
+  FacingLeft: 1
 --- !u!114 &1328501328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4822,7 +4948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5092,6 +5218,7 @@ Transform:
   m_Children:
   - {fileID: 143696312}
   - {fileID: 712334800}
+  - {fileID: 724885789}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5858,7 +5985,7 @@ RectTransform:
   m_GameObject: {fileID: 1706122192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1328501326}
   m_RootOrder: 0
@@ -6130,8 +6257,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 0}
   sounds:
-  - name: Megalovania
+  - name: Nature
     clip: {fileID: 8300000, guid: b37e415129af88f4a9079ad9d0fc5f51, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Biscuit - Lukrembo
+    clip: {fileID: 8300000, guid: 03a986014b370ac47b3bf9bbe7a6985f, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Chocolate - Lukrembo
+    clip: {fileID: 8300000, guid: 91934c2581503b44ba8e22dc57c60dda, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Butter - Lukrembo
+    clip: {fileID: 8300000, guid: fdc3a784d1f73a7499a654262126eb4f, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Brunch - Lukrembo
+    clip: {fileID: 8300000, guid: 3a50414089fb74b4b9cb7d1614daf09b, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Home - Lukrembo
+    clip: {fileID: 8300000, guid: 15cb350873da45a40b2f7ed6ae5318a9, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
@@ -7012,7 +7184,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Songs:
-  - Megalovania
+  - Nature
+  - Biscuit - Lukrembo
+  - Chocolate - Lukrembo
+  - Butter - Lukrembo
+  - Brunch - Lukrembo
+  - Home - Lukrembo
   AudioUI: {fileID: 1006362406}
   text: {fileID: 305490350}
 --- !u!4 &2049585487

@@ -12,6 +12,7 @@ TagManager:
   - Photo
   - Meditate
   - Sound
+  - YuMi
   layers:
   - Default
   - TransparentFX
