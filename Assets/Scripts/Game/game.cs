@@ -44,7 +44,17 @@ public class game : MonoBehaviour
             if (b || c)
             {
                 anim.SetTrigger("Atack");
-                if (tree[0].kick(c)) hit();
+                if (b)
+                {
+                    yumi.transform.localScale = new Vector3(-1, 1, 1);
+                    yumi.transform.position = new Vector3(-12.16f, -5.15f, 0);
+                }
+                else
+                {
+                    yumi.transform.localScale = new Vector3(1, 1, 1);
+                    yumi.transform.position = new Vector3(-8.83f, -5.15f, 0);
+                }
+                if (tree[0].kick(b)) hit();
                 for (int i = 1; i < height; i++)
                 {
                     tree[i].yTarget -= blocksize;
