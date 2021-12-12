@@ -47,12 +47,12 @@ public class game : MonoBehaviour
                 if (b)
                 {
                     yumi.transform.localScale = new Vector3(-1.75f, 1.75f, 1);
-                    yumi.transform.position = new Vector3(-14.3f, -4.56f, 0);
+                    yumi.transform.position = new Vector3(-14.3f, -4.61f, 0);
                 }
                 else
                 {
                     yumi.transform.localScale = new Vector3(1.75f, 1.75f, 1);
-                    yumi.transform.position = new Vector3(-7.3f, -4.56f, 0);
+                    yumi.transform.position = new Vector3(-7.3f, -4.61f, 0);
                 }
                 if (tree[0].kick(b)) hit();
                 for (int i = 1; i < height; i++)
